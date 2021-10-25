@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <!--<meta http-equiv="refresh" content="2"> -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="{{ url_for('static', filename='js/validacion.js') }}"></script>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style4.css') }}">
+       
+        <title>Login</title>
+    </head>
+    
+
+    <body>
+        <div>
+        <form name="formLogin" action="{{ url_for('menuPaciente') }}" method="post" onsubmit="return validar_login()">
+                       
+            <h3>Iniciar Sesión</h3>
+            <hr width=92%  posicion="center" size=3 color="#86c5f0">
+            <div>
+                <label id="user" for="usuario" >Usuario:</label> <br>
+                <input type="text" class="datos2" name="usuario" id="usuario" size="32"><br>
+            </div>
+
+            <div>
+                <label id="contras" for="password">Password:</label> <br>
+                <input type="password" class="datos2"  name="password" id="password" size="32">
+                <img onmouseover="mostrarPassword();" onmouseout="ocultarPassword();" id="imagen" src="{{ url_for('static', filename='img/view.png') }}" alt="Ojito" width="32px">  <!--Por si no se ve la imagen sale la palabra Ojito-->
+            </div>
+            
+            <div>
+                <input id="boton" type="submit" value="Iniciar" > 
+            </div>
+
+        <!-- <div>
+            <a href="#" style="color:#9553ec;">olvidó su contraseña?</a> <br><br>
+            
+            </div>-->
+            <br>
+            <hr width=92%  posicion="center" size=3 color="#86c5f0"  >
+            <br>
+            
+        </form>
+            <div id="boton2">
+                <p>Nuevo Usuario</p>
+                <button id="boton1" onclick="location.href='registro'">Registrarme</button>
+            </div>
+        </div>
+       
+                 
+    </body>
+   
+    
+</html>

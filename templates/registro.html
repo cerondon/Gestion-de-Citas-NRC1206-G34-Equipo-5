@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+      <!-- <meta http-equiv="refresh" content="2">-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="{{ url_for('static', filename='js/validacion.js') }}"></script>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+       
+        <title>Registro</title>
+    </head>
+    
+
+    <body>
+        
+        <div id="main-container">
+                <header>
+                    <div id="title"> 
+                                    
+                        <h2>Registro de nuevo usuario</h2>
+                    
+                        <hr width=92%  posicion="left" size=5 color="#FFFFFF">
+                                            
+                    </div>
+                </header>
+                <br><br>
+                
+                <form name="formRegistro" action="{{ url_for('login') }}" method="post" onsubmit="return validar_registro()" >
+                    <div>
+                        <input class="datos2" type="text" name="nombre" id="nombre" placeholder="Nombres" size="40" >
+                        <input class="datos2" type="text" name="email" id="email" placeholder="Email" size="40">
+                        <br>
+                        <input class="datos2" type="text" name="apellido" id="apellido" placeholder="Apellidos" size="40">
+                        <br>
+                        <input class="datos2" type="text" name="f_nacimiento" id="f_nacimiento" placeholder="Fecha de Nacimiento" size="40">
+                        <input class="datos2" type="text" name="usuario" id="usuario" placeholder="Usuario" size="40">
+                        <br>
+                        <input class="datos2" type="text" name="identificacion" id="identificacion" placeholder="Identificacion" size="40">
+                        <input class="datos2" type="password" name="password" id="password" placeholder="Contraseña" size="40">
+                        <img onmouseover="mostrarPassword();" onmouseout="ocultarPassword();" id="imagen" src="{{ url_for('static' , filename='img/view.png') }}" alt="Ojito" width="32px">  <!--Por si no se ve la imagen sale la palabra Ojito-->
+
+                        <select name="sexo" class="datos2" style="width:501px">
+                            <option>Femenino</option>
+                            <option>Masculino</option>                        
+                            <option>Otro</option>                        
+                        </select>
+                        <input class="datos2" type="password" name="c_password" id="c_password" placeholder="Confirmar Contraseña" size="40">
+                        <br>
+                        <input class="datos2" type="text" name="ciudad" id="ciudad" placeholder="Ciudad" size="40">   
+                        <a class="politica" href="{{ url_for('static', filename='pdf/politica.pdf') }}" target="_blank">Leer "Términos y Condiciones"</a>                     
+                        <br>
+                        <input class="datos2" type="text" name="telefono" id="telefono" placeholder="Teléfono" size="40">
+                        <input id="confirmar" type="checkbox" name="confirmar" >
+                        Declaro haber leído y aceptar las condiciones 
+                        <br>
+                        <input class="datos2" type="text" name="direccion" id="direccion" placeholder="Direccion" size="40"> 
+                        generales y la normativa sobre protección de datos.
+                        <br>
+                        <input class="datos2" type="text" name="eps" id="eps" placeholder="EPS" size="40">
+                        <input id="registrar" type="submit" value="Registrar" >                      
+                    </div>
+                </form> 
+                <button id="cancelar" onclick="location.href='registro'">Limpiar</button>  
+
+            </div>
+        
+       
+                 
+    </body>
+    <div class="final">
+        
+        <p></p>
+
+    </div>
+    
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+       <!-- <meta http-equiv="refresh" content="2"> -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+       
+        <title>menuPaciente</title>
+    </head>
+    
+
+    <body>
+        
+        <div id="main-container">
+                <header>
+                    <center>
+                        <div id="title1">                                        
+                            <h1>Hospital San José</h1>                        
+                            <img src="{{ url_for('static', filename='img/home.png') }}" width="50" onclick="location.href='home'" >  
+                            <img src="{{ url_for('static', filename='img/user.png') }}" width="53">     
+                                                                     
+                        </div>
+                        <br>
+                        <div>
+                            <h2 id="h2_tipo2">Pacientes</h2>
+                        </div>
+                    </center>
+                </header>
+                <br><br>
+                <div>
+                    <center>
+                    <h3>Bienvenido</h3>
+                    <h3 id="name">Nombre</h3>
+                    <h3 id="name">Apellido</h3>
+                    </center>
+                </div>
+                <div>
+                    <div id="botones">
+                        <button class="boton">Editar información personal</button>
+                        <button class="boton2" onclick="location.href='asignacionCitas'">Programación de Citas médicas</button>
+                    </div>
+                </div>
+                
+                <form action="" method="get">
+                    <div>
+                       
+                      
+                    </div>
+                </form>   
+
+            </div>
+        
+       
+                 
+    </body>
+    <div class="final">
+        
+        <p></p>
+
+    </div>
+    
+</html>

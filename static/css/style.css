@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+}
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:30px;
+    background-image: url(../img/fondoMedico.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 60vh;
+}
+
+header{
+
+}
+#menu{
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 15px; left: 35%;
+}
+#menu img{
+    position: relative;
+    right: 0; left: 20%;
+    
+}
+h1{
+    color: #f7f7f7;
+    margin-left: 50%;
+    margin-top: 350px;
+}
+#lema{
+    margin-top: 50px;
+    margin-left: 50%;
+}
+#boton_admon{
+    margin-top: 15%;
+    margin-left: 8%;
+    
+    width:420px;
+    height:350px;
+
+   /* margin: 80px;*/
+    position:center;
+    background-image: url(../img/admon.png);  
+    background-size: 100% 100%;
+    border-radius: 40px;
+}
+#boton_medico{
+    margin-top: 15%;
+    margin-left: 8%;
+    
+    width:420px;
+    height:350px;
+
+   /* margin: 80px;*/
+    position:center;
+    background-image: url(../img/medicos.png); 
+    background-size: 100% 100%; 
+    border-radius: 40px;
+}
+#boton_paciente{
+    margin-top: 15%;
+    margin-left: 8%;
+    
+    width:420px;
+    height:350px;
+
+   /* margin: 80px;*/
+    position:center;
+    background-image: url(../img/pacientes.png); 
+    background-size: 100% 100%;
+    border-radius: 40px; 
+     
+}
+#noticias{
+    color: #5d9dda;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#noticias p{
+    color: #000;
+}
+.final{
+    background-color: #0f4980;
+    background-size: 100% 100%;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+#contacto{
+    color: rgb(62, 175, 167);
+} 
+.datos{
+    font-size:22px;
+    margin-bottom: 8px;
+}
+.final p{
+    color: rgb(255, 255, 255) ;
+}
+#enviar{
+    margin-left: 50px;
+    color: rgb(65, 209, 65);
+    border-color:rgb(65, 209, 65);
+    font-size: 35px;
+    width:200px;
+    height:50px;
+    border-radius: 25px; 
+
+}
+/*main-container*/
+
+
+/*
+
+h1{
+    text-align: center;
+    color: #fcf7f7;
+}
+
+h2{
+    text-align:right ;
+    color: #ec6941;
+    margin-left: 80px;
+    padding-left: 2600px;
+}
+
+body{
+    background
+}
+*/

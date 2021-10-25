@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+       <!-- <meta http-equiv="refresh" content="2"> -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+       
+        <title>Home</title>
+    </head>
+    
+
+    <body>
+       <div id="main-container">
+            <header>
+                <div id="menu">                                   
+                    <h2>Bienvenido a nuestro Web Site</h2>                     
+                    <img src="{{ url_for('static', filename='img/redes.png') }}" width="200">                     
+                </div>
+                
+                <main>
+                    <div class="text">
+                        <h1>Hospital San José</h1>
+                        <p id="lema">Su Salud, Nuestra Misión</p>
+                        <div class="botones">
+                            <button id="boton_admon" onclick="location.href='login'"></button>
+                            <button id="boton_medico" onclick="location.href='login'"></button>
+                            <button id="boton_paciente" onclick="location.href='login'"></button>
+                        </div>
+                    </div>
+                </main>
+            </header>
+            <br><br><br>
+            <div id="noticias">
+                <h2>Noticias para nuestros clientes</h2> 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita esse vel quasi sit fugiat laborum hic magni iste dicta delectus beatae, in ab necessitatibus quae ad officiis odio quibusdam velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita esse vel quasi sit fugiat laborum hic magni iste dicta delectus beatae, in ab necessitatibus quae ad officiis odio quibusdam velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita esse vel quasi sit fugiat laborum hic magni iste dicta delectus beatae, in ab necessitatibus quae ad officiis odio quibusdam velit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita esse vel quasi sit fugiat laborum hic magni iste dicta delectus beatae, in ab necessitatibus quae ad officiis odio quibusdam velit</p>
+               
+
+            </div>
+            <br><br>
+
+        </div>
+       
+                 
+    </body>
+    <div class="final">
+        <h2 id="contacto">Contact Us</h2>
+        <br>
+        <div>
+            
+            <input class="datos" type="text" name="name" id="name" size="100" maxlength="100">
+            <input class="datos" type="text" name="Phone" id="Phone" size="100" maxlength="100">
+            <input class="datos" type="text" name="e-mail" id="e-mail" size="100" maxlength="100">
+            <button id="enviar">Enviar</button>
+             
+        </div>
+       
+        <br>
+        <p>Términos y Condiciones</p>
+
+    </div>
+    
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+       <!-- <meta http-equiv="refresh" content="2"> -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style5.css') }}">
+       
+        <title>asignacionCitas</title>
+    </head>
+    
+
+    <body>
+        
+        <div id="main-container">
+                <header>
+                    <center>
+                        <div id="title1">                                        
+                            <h1>Hospital San José</h1>                        
+                            <img src="{{ url_for('static', filename='img/home.png') }}" width="50" onclick="location.href='home'" >  
+                            <img src="{{ url_for('static', filename='img/user.png') }}" width="53">     
+                                                                     
+                        </div>
+        
+                        <div>
+                            <h2 id="h2_tipo2">Agende su cita para hoy</h2>
+                        </div>
+                    </center>
+                </header>
+                <br><br>
+                <div>                    
+                    <h3>Paciente: </h3>
+                    <h3 id="name">Nombre Apellido</h3>
+                    <h3 id="frase">Citas para hoy:</h3>
+                    <br>
+                    <br>
+                    <h3>ID:</h3>
+                    <h3 id="name">12345678</h3>   
+                    <h3 id="fecha">Octubre 26 de 2021</h3>                
+                </div>
+                <br><br>
+                <Table class="table"     align="center">
+                    <tr>
+                        <th>No.</th> <th>Hora</th> <th>Consultorio</th> <th>Médico Seleccionado</TH> <TH>Estado</TH> <TH>Agendar</TH>
+                    </tr>
+                    
+                    <TR>
+                        <td>1</td> <td>8:00 AM</td> <td>302</td> <TD>Dr. Juan López P. </TD> <TD>Disponible</TD> <TD><input id="select" type="checkbox" name="select1"></TD>
+                    </TR>
+                    
+                    <TR>
+                        <TD>2</TD> <TD>8:00 AM</TD> <TD>201</TD> <TD>Dra. María Camacho </TD> <TD>Asignada</TD> <TD></TD>
+                    </TR>
+                    <TR>
+                        <td>3</td> <td>8:30 AM</td> <td>302</td> <TD>Dr. Juan López P. </TD> <TD>Disponible</TD> <TD><input id="select" type="checkbox" name="select3"></TD>
+                    </TR>
+                    
+                    <TR>
+                        <TD>4</TD> <TD>8:30 AM</TD> <TD>201</TD> <TD>Dra. María Camacho </TD> <TD>Disponible</TD> <TD><input id="select" type="checkbox" name="select4"></TD>
+                    </TR>
+                    <TR>
+                        <td>5</td> <td>9:00 AM</td> <td>302</td> <TD>Dr. Juan López P. </TD> <TD>Asignada</TD> <TD></TD>
+                    </TR>
+                    
+                    <TR>
+                        <TD>6</TD> <TD>9:00 AM</TD> <TD>201</TD> <TD>Dra. María Camacho </TD> <TD>Asignada</TD> <TD></TD>
+                    </TR>
+                    <TR>
+                        <td>7</td> <td>9:30 AM</td> <td>302</td> <TD>Dr. Juan López P. </TD> <TD>Disponible</TD> <TD><input id="select" type="checkbox" name="select7"></TD>
+                    </TR>
+                    
+                    <TR>
+                        <TD>8</TD> <TD>9:30 AM</TD> <TD>201</TD> <TD>Dra. María Camacho </TD> <TD>Disponible</TD> <TD><input id="select" type="checkbox" name="select8"></TD>
+                    </TR>
+                    <TR>
+                        <td>9</td> <td>10:00 AM</td> <td>302</td> <TD>Dr. Juan López P. </TD> <TD>Disponible</TD> <TD><input id="select" type="checkbox" name="select9"></TD>
+                    </TR>
+                    
+                    <TR>
+                        <TD>10</TD> <TD>10:00 AM</TD> <TD>201</TD> <TD>Dra. María Camacho </TD> <TD>Disponible</TD> <TD><input id="select" type="checkbox" name="select10"></TD>
+                    </TR>
+                </Table>
+
+                
+                <form action="" method="get">
+                    <div>
+                       
+                      
+                    </div>
+                </form>   
+
+            </div>
+        
+       
+                 
+    </body>
+    <div class="final">
+        
+        <p></p>
+
+    </div>
+    
+</html>

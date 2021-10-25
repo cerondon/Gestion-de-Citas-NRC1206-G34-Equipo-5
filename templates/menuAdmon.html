@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <!--<meta http-equiv="refresh" content="2"> -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+       
+        <title>menuAdmon</title>
+    </head>
+    
+
+    <body>
+        
+        <div id="main-container">
+                <header>
+                    <center>
+                        <div id="title1">                                        
+                            <h1>Hospital San José</h1>                        
+                            <img src="{{ url_for('static', filename='img/rueda.png') }}" width="50">     
+                                                                     
+                        </div>
+                        
+                        <div>
+                            <h2 id="h2_tipo2">Administración</h2>
+                        </div>
+                    </center>
+                </header>
+                <!-- The sidebar -->
+                <div class="sidebar">
+                    <img src="{{ url_for('static', filename='img/foto_admon.png') }}" width="200">  
+                    <p>Dr. Nombre Apellido</p>
+                    <br>
+                    <a href="/">Home</a>
+                    <a href="#">Mi Perfil</a>
+                    <a href="#">Programación de Citas</a>
+                    <a href="#">Reportes Médicos</a>
+                    <a href="#">Crear/Eliminar Médico</a>
+                    <a href="#">Crear/Eliminar Pacientes</a>
+                    <a href="#">Calificación de Médicos</a>
+                    <br><br>
+                    <h3 id="extras">Extras</h3>
+                    <a href="{{ url_for('static', filename='pdf/politica.pdf') }}" target="_blank">Documentación</a>
+                    <a href="#">PQRS</a>
+                    <br><br>
+                </div>
+                <!-- Page content -->
+                
+                <div class="content">
+
+                </div>
+                
+                <div class="letras">
+                    <h3 id="bienvenida">Bienvenido Dr</h3>
+                    <h3 id="name">Nombre</h3>
+                    <h3 id="name">Apellido</h3>
+                </div>
+                <div>
+                    <div id="botones1">
+                        <button class="boton">Programación de Citas</button>
+                        <button class="boton2">Reportes Médicos</button>
+                    </div>
+                    <div id="botones2">
+                        <button class="boton">Crear/Eliminar Médico</button>
+                        <button class="boton2">Crear/Eliminar Paciente</button>
+                    </div>
+                    <div id="botones3">
+                        <button class="boton">Calificación de Médicos</button>
+                        <button class="boton2" formtarget="_blank" onclick="location.href='../static/pdf/politica.pdf'">Documentación</button> 
+                    </div>
+                </div>
+                
+                <form action="" method="get">
+                    <div>
+                       
+                      
+                    </div>
+                </form>   
+
+            </div>
+        
+       
+                 
+    </body>
+    <div class="final">
+        
+        <p></p>
+
+    </div>
+    
+</html>
+
+
