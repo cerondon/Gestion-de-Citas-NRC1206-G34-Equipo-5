@@ -4,6 +4,8 @@ from flask import request
 
 app = Flask(__name__)
 
+#*************************************
+# PAGINA DE PRUEBA PARA SENTENCIAS SQL
 from productos import productos # "BD": estará cargado sólo en memoria RAM.
 
 @app.route('/')

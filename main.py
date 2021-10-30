@@ -55,97 +55,96 @@ def home():
 
 @app.route("/registro", methods=["GET", "POST"])
 def registro():
-    #try:
-    if request.method == 'POST':
-        nombre=request.form['nombre']
-        apellido=request.form['apellido']
-        fecha_nacimiento=request.form['f_nacimiento']
-        identificacion=request.form['identificacion']
-        sexo=request.form['sexo']
-        ciudad=request.form['ciudad']
-        telefono=request.form['telefono']
-        direccion=request.form['direccion']   
-        eps=request.form['eps']        
-        email=request.form['email']
-        usuario=request.form['usuario']
-        password=request.form['password']
-        
-        error=None
-        db = get_db()
-        
-        if not nombre:
-            error = "Debe registrar al menos un Nombre."
-            flash(error)
-        if not apellido:
-            error = "Debe registrar al menos un Apellido."
-            flash(error)
-        if not identificacion:
-            error = "Debe registrar su No. de Identificación."
-            flash(error)
-        if not email:
-            error = "Debe registrar un Correo Electrónico."
-            flash(error)
-        if not usuario:
-            error = "Usuario Requerido."
-            flash(error)
-        if not password:
-            error = "Constraseña Requerida."
-            flash(error)
-        
-        """
-        if not isUsernameValid(usuario):
-            error="El usuario debe ser alfanumerico o incluir sólo '.','_'-'"
-            flash(error)
-        if not isEmailValid(email):
-            error="Correo inválido"
-            flash(error)
-        if not isPasswordValid(password):
-            error="La contraseña debe contener al menos una minúscula, una mayúscula, un número y 8 caracteres"   
-            flash(error)
-        """
-        user_correo=db.execute(              # Se usa execute por seguridad informática
-                'SELECT * FROM Usuarios WHERE correo = ?'
-                ,
-                (email,)
-            ).fetchone()
-        user_identificacion=db.execute(              # Se usa execute por seguridad informática
-                'SELECT * FROM Usuarios WHERE identificacion = ?'
-                ,
-                (identificacion,)
-            ).fetchone()
-        
-        if user_identificacion is not None:
-            error="Cédula ya registrada" 
-            flash(error)
-            return render_template("registro.html") #, form=form)
-        if user_correo is not None:
-            error="Correo electrónico ya existe" 
-            flash(error) 
-            return render_template("registro.html") #, form=form)
-        else:
-            password_cifrado = generate_password_hash(password)   #Encripta la constraseña
-            db.execute(              # Se usa execute por seguridad informática
-                'INSERT INTO Usuarios (nombre, apellido, fecha_nacimiento, identificacion, sexo, ciudad, telefono, direccion, eps, correo, usuario, contrasena) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)'
-                ,
-                (nombre, apellido, fecha_nacimiento, identificacion, sexo, ciudad, telefono, direccion, eps, email, usuario, password_cifrado)
-            )
-            db.commit()       
-            return redirect('login')  #render_template("login.html")
-        
-        #entró por GET    
-    return render_template("registro.html")
-    #except:
-    #    flash("Ocurrió un error no identificado")
-    #    return render_template("registro.html")
+    try:
+        if request.method == 'POST':
+            nombre=request.form['nombre']
+            apellido=request.form['apellido']
+            fecha_nacimiento=request.form['f_nacimiento']
+            identificacion=request.form['identificacion']
+            sexo=request.form['sexo']
+            ciudad=request.form['ciudad']
+            telefono=request.form['telefono']
+            direccion=request.form['direccion']   
+            eps=request.form['eps']        
+            email=request.form['email']
+            usuario=request.form['usuario']
+            password=request.form['password']
+            
+            error=None
+            db = get_db()
+            
+            if not nombre:
+                error = "Debe registrar al menos un Nombre."
+                flash(error)
+            if not apellido:
+                error = "Debe registrar al menos un Apellido."
+                flash(error)
+            if not identificacion:
+                error = "Debe registrar su No. de Identificación."
+                flash(error)
+            if not email:
+                error = "Debe registrar un Correo Electrónico."
+                flash(error)
+            if not usuario:
+                error = "Usuario Requerido."
+                flash(error)
+            if not password:
+                error = "Constraseña Requerida."
+                flash(error)
+            #VALIDACIÓN
+            
+            if not isUsernameValid(usuario):
+                error="El usuario debe ser alfanumerico o incluir sólo '.','_'-'"
+                flash(error)
+                return render_template("registro.html")
+            elif not isEmailValid(email):
+                error="Correo inválido"
+                flash(error)
+                return render_template("registro.html")
+            elif not isPasswordValid(password):
+                error="La contraseña debe contener al menos una minúscula, una mayúscula, un número y 8 caracteres"   
+                flash(error)
+                return render_template("registro.html") #, form=form)
+            
+            user_correo=db.execute(              # Se usa execute por seguridad informática
+                    'SELECT * FROM Usuarios WHERE correo = ?'
+                    ,
+                    (email,)
+                ).fetchone()
+            user_identificacion=db.execute(              # Se usa execute por seguridad informática
+                    'SELECT * FROM Usuarios WHERE identificacion = ?'
+                    ,
+                    (identificacion,)
+                ).fetchone()
+            
+            if user_identificacion is not None:
+                error="Cédula ya registrada" 
+                flash(error)
+                return render_template("registro.html") #, form=form)
+            if user_correo is not None:
+                error="Correo electrónico ya existe" 
+                flash(error) 
+                return render_template("registro.html") #, form=form)
+            else:
+                password_cifrado = generate_password_hash(password)   #Encripta la constraseña
+                db.execute(              # Se usa execute por seguridad informática
+                    'INSERT INTO Usuarios (nombre, apellido, fecha_nacimiento, identificacion, sexo, ciudad, telefono, direccion, eps, correo, usuario, contrasena) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)'
+                    ,
+                    (nombre, apellido, fecha_nacimiento, identificacion, sexo, ciudad, telefono, direccion, eps, email, usuario, password_cifrado)
+                )
+                db.commit()       
+                return redirect('login')  #render_template("login.html")
+            
+            #entró por GET    
+        return render_template("registro.html")
+    except:
+        flash("Ocurrió un error no identificado")
+        return render_template("registro.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
     form=Formulario_login(request.form)      #carga los datos del formulario
     if request.method == "POST" and form.validate():
-        
-        #Validación Aqui
-        #Usuario: Prueba
-        #Contraseña: Prueba123
         
         usuario = form.usuario.data
         password = form.password.data
@@ -269,6 +268,6 @@ if __name__=="__main__":
 	app.run(debug=True)
  """
  
-if __name__ == '__main__':                        # Certificado SSL
-    app.run( host='127.0.0.1', port =443, ssl_context=('micertificado.pem', 'llaveprivada.pem') )
+#if __name__ == '__main__':                        # Certificado SSL
+#    app.run( host='127.0.0.1', port =443, ssl_context=('micertificado.pem', 'llaveprivada.pem') )
  

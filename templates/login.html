@@ -40,7 +40,7 @@
             
             <hr width=92%  posicion="center" size=3 color="#86c5f0">
                 {{form.usuario.label (class_='user')}}<br>
-                {{form.usuario (class_='datos2')}}<br>
+                {{form.usuario (class_='datos2') }} <br>    
                 {% if form.usuario.errors %}
                     <ul class=errors>
                         {% for error in form.usuario.errors %}

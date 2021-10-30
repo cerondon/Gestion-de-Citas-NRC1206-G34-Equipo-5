@@ -47,7 +47,7 @@
                 </header>
                 <br><br>
                 
-                <form name="formRegistro" action="{{ url_for('registro') }}" method="post" onsubmit="validar_registro()">
+                <form name="formRegistro" action="{{ url_for('registro') }}" method="post" onsubmit="return validar_registro()">
                     <div>
                         <input class="datos2" type="text" name="nombre" id="nombre" placeholder="Nombres" size="40">
                         <input class="datos2" type="text" name="email" id="email" placeholder="Email" size="40">
