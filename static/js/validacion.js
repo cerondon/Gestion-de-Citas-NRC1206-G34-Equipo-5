@@ -71,7 +71,9 @@ function ocultarPassword(){
     var obj = document.getElementById("password");
     obj.type = "password";
 }
-
+function limpiarFormulario() {
+    document.getElementById("miForm").reset();
+  }
 
 
 

@@ -13,6 +13,15 @@
     
 
     <body>
+        <div id="index"> 
+            {% if g.user %}
+                <a href="/logout" style="color:#c06c27;" id="index">Cerrar Sesión</a>
+            {% else %}
+                <a href="/index" style="color:#ffffff;">Inicio</a><br>
+                <a href="/login" style="color:#1c1e1f;">Iniciar Sesión</a>
+            {% endif %}
+            </div>
+        <hr width=92%  posicion="left">
         
         <div id="main-container">
                 <header>
@@ -32,13 +41,13 @@
                 <br><br>
                 <div>                    
                     <h3>Paciente: </h3>
-                    <h3 id="name">Nombre Apellido</h3>
+                    <h3 id="name">{{g.user[1]}} {{g.user[2]}}</h3>
                     <h3 id="frase">Citas para hoy:</h3>
                     <br>
                     <br>
                     <h3>ID:</h3>
-                    <h3 id="name">12345678</h3>   
-                    <h3 id="fecha">Octubre 26 de 2021</h3>                
+                    <h3 id="name">{{g.user[4]}}</h3>   
+                    <h3 id="fecha">Octubre 30 de 2021</h3>                
                 </div>
                 <br><br>
                 <Table class="table"     align="center">

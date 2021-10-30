@@ -14,6 +14,26 @@
     
 
     <body>
+        <div id="index" > 
+        {% if g.user %}
+            {{g.user[1]}}
+            <a href="/logout" style="color:#c06c27;" id="index" >Cerrar Sesión</a>
+        {% else %}
+            <a href="/index" style="color:#ffffff;">Inicio</a><br>
+            <a href="/login" style="color:#1c1e1f;">Iniciar Sesión</a>
+        {% endif %}
+        </div>
+        <hr width=92%  posicion="left">
+        {% with messages=get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{message}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+        {% endwith %}
         
         <div id="main-container">
                 <header>
@@ -27,21 +47,21 @@
                 </header>
                 <br><br>
                 
-                <form name="formRegistro" action="{{ url_for('login') }}" method="post" onsubmit="return validar_registro()" >
+                <form name="formRegistro" action="{{ url_for('registro') }}" method="post" onsubmit="validar_registro()">
                     <div>
-                        <input class="datos2" type="text" name="nombre" id="nombre" placeholder="Nombres" size="40" >
+                        <input class="datos2" type="text" name="nombre" id="nombre" placeholder="Nombres" size="40">
                         <input class="datos2" type="text" name="email" id="email" placeholder="Email" size="40">
                         <br>
                         <input class="datos2" type="text" name="apellido" id="apellido" placeholder="Apellidos" size="40">
                         <br>
-                        <input class="datos2" type="text" name="f_nacimiento" id="f_nacimiento" placeholder="Fecha de Nacimiento" size="40">
+                        <input class="datos2" type="text" name="f_nacimiento" id="f_nacimiento" placeholder="Fecha de Nacimiento (dd/mm/yy)" size="40">
                         <input class="datos2" type="text" name="usuario" id="usuario" placeholder="Usuario" size="40">
                         <br>
                         <input class="datos2" type="text" name="identificacion" id="identificacion" placeholder="Identificacion" size="40">
                         <input class="datos2" type="password" name="password" id="password" placeholder="Contraseña" size="40">
                         <img onmouseover="mostrarPassword();" onmouseout="ocultarPassword();" id="imagen" src="{{ url_for('static' , filename='img/view.png') }}" alt="Ojito" width="32px">  <!--Por si no se ve la imagen sale la palabra Ojito-->
 
-                        <select name="sexo" class="datos2" style="width:501px">
+                        <select name="sexo" class="datos2" style="width:508px">
                             <option>Femenino</option>
                             <option>Masculino</option>                        
                             <option>Otro</option>                        
@@ -59,15 +79,13 @@
                         generales y la normativa sobre protección de datos.
                         <br>
                         <input class="datos2" type="text" name="eps" id="eps" placeholder="EPS" size="40">
-                        <input id="registrar" type="submit" value="Registrar" >                      
+                        <input id="registrar" type="submit" value="Registrar" >  
+                        <input id="cancelar" type="reset" value="Limpiar">                    
                     </div>
                 </form> 
-                <button id="cancelar" onclick="location.href='registro'">Limpiar</button>  
 
             </div>
-        
-       
-                 
+              
     </body>
     <div class="final">
         

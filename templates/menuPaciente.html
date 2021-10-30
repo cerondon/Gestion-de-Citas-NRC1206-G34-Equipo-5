@@ -13,6 +13,25 @@
     
 
     <body>
+        <div id="index"> 
+            {% if g.user %}
+                <a href="/logout" style="color:#c06c27;" id="index"  >Cerrar Sesión</a>
+            {% else %}
+                <a href="/index" style="color:#ffffff;">Inicio</a><br>
+                <a href="/login" style="color:#1c1e1f;">Iniciar Sesión</a>
+            {% endif %}
+            </div>
+        <hr width=92%  posicion="left">
+
+        {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
         
         <div id="main-container">
                 <header>
@@ -33,8 +52,8 @@
                 <div>
                     <center>
                     <h3>Bienvenido</h3>
-                    <h3 id="name">Nombre</h3>
-                    <h3 id="name">Apellido</h3>
+                    <h3 id="name">{{g.user[1]}}</h3>
+                    <h3 id="name">{{g.user[2]}}</h3>
                     </center>
                 </div>
                 <div>

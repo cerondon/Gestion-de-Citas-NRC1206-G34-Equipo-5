@@ -7,7 +7,9 @@ body{
     background-image: url(../img/fondoMedico.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 80vh;
+    background-attachment: scroll;
+    height: 100vh;
+
 }
             
 h1 {
@@ -18,55 +20,71 @@ h1 {
 }
 form {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 500px;
+    width: 400px;
     padding-top: 16px;
-    border-radius: 2px;
+    border-radius: 20px;
     margin-left: 50%;
     margin-top: 10%;
     padding-left: 16px;
     background-color: rgb(255, 255, 255); 
+    padding-bottom: 25px;
 }
-input{
-    margin-top: 0px;
-}
-#boton{
-    margin-left: 10px;
+
+.boton{
+    margin-top: 5px;
+    margin-left: 110px;
     font-weight: bold;
     width: 160px;
     height: 35px;
     font-size: 20px;
-    border-radius: 7px;
+    border-radius: 10px;
     background-color: #52cfba;
     color: #f7f7f7;
-    border-style: none;
+    margin-bottom: 15px;
 } 
 #boton1{
-    margin-left: 10px;
+    margin-left: 110px;
     font-weight: bold;
     width: 160px;
     height: 35px;
     font-size: 20px;
-    border-radius: 7px;
+    border-radius: 10px;
     background-color: rgb(79, 168, 252);
     color: #f7f7f7; 
 }   
-#user{
-    margin-left: 7px;
+.user{
+    margin-left: 16px;
+    padding-top: 0px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+
 } 
+.errors{
+    margin-left: 10px;
+    padding-top: 0px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
   
 #contras{
     margin-left: 7px;
 }
 #imagen{
-    margin-left: 1px;
-    margin-top: 0px
+    margin-left: 12px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .datos2{
-    font-size: 24px;
-    margin-left: 2%;
+    font-size: 25px;
+    margin-left: 16px;
     margin-right: 2%;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    border-radius: 20px;
+    padding-left: 15px;   
+}
+#index{ 
+    margin: 15px;
+    margin-left: 50px;
 }
 
 h2{
@@ -74,21 +92,32 @@ h2{
 
 }
 h3{
+    text-align: center;
+    margin-left:0px;
+    padding-left: 0px;
     color: #52cfba;
-
 }
 p{
-    margin-left: 8px; 
+    margin-top: 20px;
+    margin-left: 110px; 
     font-size: 20px;
     font-weight: bold;
 }
 
 #boton2{
-    padding-top: 0px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 25px;
     margin-left: 50%;
     margin-top: 0%;
     padding-left: 16px;
-    width: 500px;
+    width: 400px;
     background-color: rgb(255, 255, 255); 
 }
+.record{
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size:18px;
+    color:#86c5f0;
+    font-family:Arial, Helvetica, sans-serif
+}
+

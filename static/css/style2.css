@@ -7,7 +7,7 @@ body{
     background-image: url(../img/fondoAzul.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 80vh;
+    height: 100vh;
 
 }
 
@@ -26,6 +26,16 @@ form{
     margin-left: 3%;
     margin-right: 3%;
     margin-bottom: 8px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.datos3{
+    font-size: 24px;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    padding-left: 10px;
 }
 .politica{
     font-size: 24px;
@@ -39,7 +49,7 @@ form{
     color:#f7f7f7;
     width:150px;
     height:38px;
-    margin-left: 12%;
+    margin-left: 8%;
     font-weight:bold;
     font-size: 20px;
     border-radius: 10px;
@@ -53,7 +63,7 @@ form{
     font-weight:bold;
     font-size: 20px;
     border-radius: 10px;
-    margin-left: 52.7%;
+    margin-left: 1%;
 }
 hr{
     margin-left: 55px;
@@ -91,6 +101,10 @@ h1 {
 h3{
     color: #f7f7f7;
     display: inline-flex;
+}
+#index{
+    margin: 15px;
+    margin-left: 50px;
 }
 #name{
     color: #35BDB3;

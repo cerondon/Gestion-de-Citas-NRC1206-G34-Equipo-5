@@ -13,6 +13,16 @@
     
 
     <body>
+        {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        
        <div id="main-container">
             <header>
                 <div id="menu">                                   
@@ -35,8 +45,7 @@
             <br><br><br>
             <div id="noticias">
                 <h2>Noticias para nuestros clientes</h2> 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita esse vel quasi sit fugiat laborum hic magni iste dicta delectus beatae, in ab necessitatibus quae ad officiis odio quibusdam velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita esse vel quasi sit fugiat laborum hic magni iste dicta delectus beatae, in ab necessitatibus quae ad officiis odio quibusdam velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita esse vel quasi sit fugiat laborum hic magni iste dicta delectus beatae, in ab necessitatibus quae ad officiis odio quibusdam velit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita esse vel quasi sit fugiat laborum hic magni iste dicta delectus beatae, in ab necessitatibus quae ad officiis odio quibusdam velit</p>
-               
+                <p>Proximamente este sitio web estará a tu servicio para que puedas acceder y agendar todas tu citas médicas en el Hospital San josé, así como consultar tu historia médica, ver los reportes de los profesionales de la salud que te hayan atendido, descargar tus fórmulas médicas y calificar nuestro servicio.</p>
 
             </div>
             <br><br>
@@ -46,19 +55,25 @@
                  
     </body>
     <div class="final">
-        <h2 id="contacto">Contact Us</h2>
+        <h2 id="contacto">Contáctanos</h2>
         <br>
-        <div>
-            
-            <input class="datos" type="text" name="name" id="name" size="100" maxlength="100">
-            <input class="datos" type="text" name="Phone" id="Phone" size="100" maxlength="100">
-            <input class="datos" type="text" name="e-mail" id="e-mail" size="100" maxlength="100">
-            <button id="enviar">Enviar</button>
-             
-        </div>
+
+
+        <form name="formContacto" action="{{ url_for('home') }}" method="post" onsubmit="">
+
+            {{form.nombre.label }}<br>
+            {{form.nombre (class_="datos", size="40")}}<br>
+            {{form.email.label }}<br>
+            {{form.email (class_="datos", size="40")}}<br>
+            {{form.mensaje.label }}<br>
+            {{form.mensaje (class_="mensaje", rows="6", cols="52")}}
+            {{form.enviar }}
+
+        </form>
        
         <br>
-        <p>Términos y Condiciones</p>
+        <a class="politica" href="{{ url_for('static', filename='pdf/politica.pdf') }}" target="_blank">Términos y Condiciones</a>
+
 
     </div>
     
