@@ -34,7 +34,7 @@
         {% endif %}
         {% endwith %}
         <div>
-        <form name="formLogin" action="{{ url_for('login') }}" method="post" onsubmit="validar_login()">
+        <form name="formLogin" action="{{ url_for('login') }}" method="post" onsubmit="return validar_login()">
                        
             <h3>Iniciar Sesión</h3>
             
